@@ -1,83 +1,75 @@
-'use strict';
 angular.module("ngLocale", [], ["$provide", function($provide) {
 var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "many", OTHER: "other"};
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
-    "AMPMS": [
-      "AM",
-      "PM"
-    ],
-    "DAY": [
-      "domingo",
-      "lunes",
-      "martes",
-      "mi\u00e9rcoles",
-      "jueves",
-      "viernes",
-      "s\u00e1bado"
-    ],
-    "ERANAMES": [
-      "antes de Cristo",
-      "despu\u00e9s de Cristo"
-    ],
-    "ERAS": [
-      "a. C.",
-      "d. C."
-    ],
-    "MONTH": [
-      "enero",
-      "febrero",
-      "marzo",
-      "abril",
-      "mayo",
-      "junio",
-      "julio",
-      "agosto",
-      "setiembre",
-      "octubre",
-      "noviembre",
-      "diciembre"
-    ],
-    "SHORTDAY": [
-      "dom.",
-      "lun.",
-      "mar.",
-      "mi\u00e9.",
-      "jue.",
-      "vie.",
-      "s\u00e1b."
-    ],
-    "SHORTMONTH": [
-      "ene.",
-      "feb.",
-      "mar.",
-      "abr.",
-      "may.",
-      "jun.",
-      "jul.",
-      "ago.",
-      "set.",
-      "oct.",
-      "nov.",
-      "dic."
-    ],
+    "AMPMS": {
+      "0": "a.m.",
+      "1": "p.m."
+    },
+    "DAY": {
+      "0": "domingo",
+      "1": "lunes",
+      "2": "martes",
+      "3": "miércoles",
+      "4": "jueves",
+      "5": "viernes",
+      "6": "sábado"
+    },
+    "MONTH": {
+      "0": "enero",
+      "1": "febrero",
+      "2": "marzo",
+      "3": "abril",
+      "4": "mayo",
+      "5": "junio",
+      "6": "julio",
+      "7": "agosto",
+      "8": "septiembre",
+      "9": "octubre",
+      "10": "noviembre",
+      "11": "diciembre"
+    },
+    "SHORTDAY": {
+      "0": "dom",
+      "1": "lun",
+      "2": "mar",
+      "3": "mié",
+      "4": "jue",
+      "5": "vie",
+      "6": "sáb"
+    },
+    "SHORTMONTH": {
+      "0": "ene",
+      "1": "feb",
+      "2": "mar",
+      "3": "abr",
+      "4": "may",
+      "5": "jun",
+      "6": "jul",
+      "7": "ago",
+      "8": "sep",
+      "9": "oct",
+      "10": "nov",
+      "11": "dic"
+    },
     "fullDate": "EEEE, d 'de' MMMM 'de' y",
     "longDate": "d 'de' MMMM 'de' y",
-    "medium": "d 'de' MMM 'de' y h:mm:ss a",
-    "mediumDate": "d 'de' MMM 'de' y",
+    "medium": "MMM d, y h:mm:ss a",
+    "mediumDate": "MMM d, y",
     "mediumTime": "h:mm:ss a",
-    "short": "d/M/yy h:mm a",
-    "shortDate": "d/M/yy",
+    "short": "M/d/yy h:mm a",
+    "shortDate": "M/d/yy",
     "shortTime": "h:mm a"
   },
   "NUMBER_FORMATS": {
-    "CURRENCY_SYM": "$",
-    "DECIMAL_SEP": ".",
-    "GROUP_SEP": ",",
-    "PATTERNS": [
-      {
+    "CURRENCY_SYM": "€",
+    "DECIMAL_SEP": ",",
+    "GROUP_SEP": ".",
+    "PATTERNS": {
+      "0": {
         "gSize": 3,
         "lgSize": 3,
+        "macFrac": 0,
         "maxFrac": 3,
         "minFrac": 0,
         "minInt": 1,
@@ -86,20 +78,21 @@ $provide.value("$locale", {
         "posPre": "",
         "posSuf": ""
       },
-      {
+      "1": {
         "gSize": 3,
         "lgSize": 3,
+        "macFrac": 0,
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,
-        "negPre": "\u00a4-",
-        "negSuf": "",
-        "posPre": "\u00a4",
-        "posSuf": ""
+        "negPre": "-",
+        "negSuf": " \u00A4",
+        "posPre": "",
+        "posSuf": " \u00A4"
       }
-    ]
+    }
   },
   "id": "es-us",
-  "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
+  "pluralCat": function (n) {  if (n == 1) {   return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);
