@@ -26,7 +26,7 @@ development:
   encoding: unicode
   database: raingular-blog_development
   pool: 5
-  username: admin
+  username: iLad
   password: password
 
   # The specified database role being used to connect to postgres.
@@ -64,7 +64,7 @@ test:
   encoding: unicode
   database: raingular-blog_test
   pool: 5
-  username: admin
+  username: iLad
   password: password
 
 # As with config/secrets.yml, you never want to store sensitive information,
